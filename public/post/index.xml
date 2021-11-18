@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Story Starts Here on Xinyue&#39;s Blog</title>
+    <link>https://example.com/post/</link>
+    <description>Recent content in Story Starts Here on Xinyue&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Nov 2021 21:13:14 -0500</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>World Populations</title>
+      <link>https://example.com/post/world-populations/</link>
+      <pubDate>Wed, 17 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/post/world-populations/</guid>
+      <description>Welcome to the first part of my blog!
+The following World Population Trend 1960-2020 will give you an overview of population density trends. We can clearly see that from 1960 to 2020, the world’s population density is steadily increasing. This is due to the steady development of our science, technology and medical treatment, fewer diseases and longer life expectancy. However, there was a sharp decline between 2000 and 2001.</description>
+    </item>
+    
+    <item>
+      <title>Populations Vs. Regions</title>
+      <link>https://example.com/post/region/</link>
+      <pubDate>Tue, 16 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/post/region/</guid>
+      <description>In this page, I made three DV: The Population Changes in Different Regions from 1960 to 2020, the Change of Population Growth Rate in different regions from 1960 to 2020 and the Distribution of Population in different regions in 2020.
+In the Population Trends(1960-2020) by Region figure, you can clearly see that the population of East Asia &amp;amp; Pacific is the highest at the beginning and with the fastest growing.</description>
+    </item>
+    
+    <item>
+      <title>Populations Vs. Income Groups</title>
+      <link>https://example.com/post/incomegroup/</link>
+      <pubDate>Mon, 15 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/post/incomegroup/</guid>
+      <description>In order to make a more intuitive comparison with Populations vs. Regions, I use the same comparison method. The following three DV show the population density changes in different income groups from 1960 to 2020, the changes of population density growth rate in different income groups from 1960 to 2020 and the distribution of population density in different income groups in 2020.</description>
+    </item>
+    
+  </channel>
+</rss>

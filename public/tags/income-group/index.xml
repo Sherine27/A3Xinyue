@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Income Group on Xinyue&#39;s Blog</title>
+    <link>https://example.com/tags/income-group/</link>
+    <description>Recent content in Income Group on Xinyue&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Nov 2021 21:13:14 -0500</lastBuildDate><atom:link href="https://example.com/tags/income-group/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>World Populations</title>
+      <link>https://example.com/post/world-populations/</link>
+      <pubDate>Wed, 17 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/post/world-populations/</guid>
+      <description>Welcome to the first part of my blog!
+The following World Population Trend 1960-2020 will give you an overview of population density trends. We can clearly see that from 1960 to 2020, the world’s population density is steadily increasing. This is due to the steady development of our science, technology and medical treatment, fewer diseases and longer life expectancy. However, there was a sharp decline between 2000 and 2001.</description>
+    </item>
+    
+  </channel>
+</rss>

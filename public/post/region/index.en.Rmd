@@ -1,0 +1,90 @@
+---
+title: "Populations Vs. Regions"
+author: "Xinyue Li"
+date: 2021-11-16T21:13:14-05:00
+categories: ["R"]
+tags: ["World Population", "Regions"]
+---
+
+In this page, I made three DV: The Population Changes in Different Regions from 1960 to 2020, the Change of Population Growth Rate in different regions from 1960 to 2020 and the Distribution of Population in different regions in 2020.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	collapse = TRUE
+)
+```
+
+
+In the Population Trends(1960-2020) by Region figure, you can clearly see that the population of East Asia & Pacific is the highest at the beginning and with the fastest growing. It may because East Asia & Pacific includes populous countries such as China and Singapore. However, it can be seen that there were two sharp declines in 1990-1991 and 2000-2001. I speculated that it should be caused by China's one-child policy since 1980.
+```{r Region Trend, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(plotly)
+library(ggplot2)
+data <- read.csv("./../../../../POP_DNST.csv")
+data <- data[data$Region!="" & data$IncomeGroup!="",]
+
+d1 <- data[,c(3,5:ncol(data))]
+
+d1 <- pivot_longer(d1, -Region, names_to = "Year", values_to = "Population")
+
+d1$Year <- as.numeric(gsub("X","", d1$Year))
+
+d1 <- d1 %>%group_by(Year, Region )%>%summarise( Population = mean( Population,na.rm = T))
+
+ggplotly(p1 <- ggplot(d1, aes(Year,Population, group  =  Region, color =  Region)) +
+           ggtitle("Population Trends(1960-2020) by Region")+
+  geom_line() + theme_bw())
+```
+
+
+
+
+My guess can also be reflected in the Population Growth Rate(1960-2020) by Region figure. The population density growth rate of East Asia & Pacific has been showing a downward trend. 
+
+Interestingly, except for Sub-Saharan Africa, the population density growth rate of almost every region decreases. And the change rate of these growth rates is particularly intense in the unit of 0.01.
+```{r}
+d1 <- data[,c(4,5)]
+for( i in 6:ncol(data)) { 
+  
+  r <- (data[,i] - data[,i-1])/data[,i-1]
+  d1 <- cbind(d1, r)
+}
+d1 <- d1[,-c(1:2)]
+d1 <- data.frame(data$Region,d1)
+colnames(d1)[1] <- "Region"
+colnames(d1)[-1] <- 1962:2020
+d1 <- pivot_longer(d1, -Region, names_to = "Year", values_to = "Population Growth Rate")
+
+d1$Year <- as.numeric(gsub("X","", d1$Year))
+
+d1 <- d1 %>%group_by(Year, Region)%>%
+  summarise(`Population Growth Rate` = mean( `Population Growth Rate`,na.rm = T))
+
+p2 <- ggplot(d1, aes(Year, `Population Growth Rate`, group  = Region, color = Region)) +
+  ggtitle("Population Growth Rate(1960-2020) by Region")+
+  geom_line() + theme_bw()
+
+ggplotly(p2)
+```
+
+
+
+
+
+In order to understand the current situation more clearly, the Population Distribution by Region (2020) DV is made to study the population distribution of different regions. It can be seen that Europe is particularly concentrated, while North America is relatively scattered.
+```{r}
+p4 <- ggplot(data, aes(X2020, fill =  Region)) +
+  geom_density(alpha = 0.5) + scale_x_log10()+ theme_bw() +
+  ggtitle("Population Distribution by Region (2020)")+
+  labs(x = "Population log-scaled")
+ggplotly(p4)
+```
+
+
+
+
+
+

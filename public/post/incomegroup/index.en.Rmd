@@ -1,0 +1,83 @@
+---
+title: "Populations Vs. Income Groups"
+author: "Xinyue Li"
+date: 2021-11-15T21:13:14-05:00
+categories: ["R"]
+tags: ["World Population", "Income Groups"]
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	collapse = TRUE
+)
+```
+In order to make a more intuitive comparison with Populations vs. Regions, I use the same comparison method. The following three DV show the population density changes in different income groups from 1960 to 2020, the changes of population density growth rate in different income groups from 1960 to 2020 and the distribution of population density in different income groups in 2020.
+
+
+In the DV of Population Trends (1960-2020) by Income Group, we can know the population density of high income group is the highest at the beginning and with the fastest growth trend, which has been faulted with other income groups. This is a very interesting thing, because in our previous exploration of the region part, we found that East Asia & Pacific has the population density growth higher than other regions. Compared with the Region & Income Group Percentage graph in the World Population section, we can find that in the region of East Asia & Pacific, the high income group accounts for only 38%, while the North America region with the largest percentage of high income group has no significant population growth in this population trends by income group. I think this is due to the suffocating population density and population growth rate of Macao, Hong Kong, and Singapore's regions, which are both high income groups and East Asia & Pacific.
+```{r Region Trend, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(plotly)
+library(ggplot2)
+data <- read.csv("./../../../../POP_DNST.csv")
+data <- data[data$Region!="" & data$IncomeGroup!="",]
+
+d1 <- data[,c(4,5:ncol(data))]
+
+d1 <- pivot_longer(d1, -IncomeGroup, names_to = "Year", values_to = "Population")
+
+d1$Year <- as.numeric(gsub("X","", d1$Year))
+
+d1 <- d1 %>%group_by(Year, IncomeGroup )%>%summarise( Population = mean( Population,na.rm = T))
+
+p2 <- ggplot(d1, aes(Year,Population, group  = IncomeGroup, color = IncomeGroup)) +
+   ggtitle("Population Trends(1960-2020) by Income Group")+
+  geom_line() + theme_bw()
+
+ggplotly(p2)
+```
+
+
+
+The Population Growth Rate(1960-2020) by Income Group is basically consistent with the region. Except for the low income group, the population density growth rate of other income groups is declining, probably because these regions urgently need population development to stimulate economic development.
+
+```{r}
+d1 <- data[,c(4,5)]
+for( i in 6:ncol(data)) { 
+  
+  r <- (data[,i] - data[,i-1])/data[,i-1]
+  d1 <- cbind(d1, r)
+}
+d1 <- d1[,-c(1:2)]
+d1 <- data.frame(data$IncomeGroup,d1)
+colnames(d1)[1] <- "IncomeGroup"
+colnames(d1)[-1] <- 1962:2020
+d1 <- pivot_longer(d1, -IncomeGroup, names_to = "Year", values_to = "Population Growth Rate")
+
+d1$Year <- as.numeric(gsub("X","", d1$Year))
+
+d1 <- d1 %>%group_by(Year, IncomeGroup)%>%
+  summarise(`Population Growth Rate` = mean( `Population Growth Rate`,na.rm = T))
+
+p2 <- ggplot(d1, aes(Year, `Population Growth Rate`, group  = IncomeGroup, color = IncomeGroup)) +
+  ggtitle("Population Growth Rate(1960-2020) by Income Group")+
+  geom_line() + theme_bw()
+
+ggplotly(p2)
+```
+
+
+It can be seen from the Population Distribution by Income Group (2020) that in 2020, the population density change range of each income group is not obvious. In comparison, the change of upper middle income group is slightly greater than that of other groups, while the population density of high income group is slightly greater than that of other groups.
+```{r}
+p5 <- ggplot(data, aes(X2020, fill =  IncomeGroup )) +
+  geom_density(alpha = 0.5) + scale_x_log10()+ theme_bw() +
+  ggtitle("Population Distribution by Income Group (2020)")+
+  labs(x = "Population log-scaled")
+
+ggplotly(p5)
+```
+

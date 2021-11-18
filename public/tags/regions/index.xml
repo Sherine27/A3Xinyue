@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regions on Xinyue&#39;s Blog</title>
+    <link>https://example.com/tags/regions/</link>
+    <description>Recent content in Regions on Xinyue&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Nov 2021 21:13:14 -0500</lastBuildDate><atom:link href="https://example.com/tags/regions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Populations Vs. Regions</title>
+      <link>https://example.com/post/region/</link>
+      <pubDate>Tue, 16 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/post/region/</guid>
+      <description>In this page, I made three DV: The Population Changes in Different Regions from 1960 to 2020, the Change of Population Growth Rate in different regions from 1960 to 2020 and the Distribution of Population in different regions in 2020.
+In the Population Trends(1960-2020) by Region figure, you can clearly see that the population of East Asia &amp;amp; Pacific is the highest at the beginning and with the fastest growing.</description>
+    </item>
+    
+  </channel>
+</rss>

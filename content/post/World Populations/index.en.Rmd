@@ -1,0 +1,65 @@
+---
+title: "World Populations"
+author: "Xinyue Li"
+date: 2021-11-17T21:13:14-05:00
+categories: ["R"]
+tags: ["Region", "Income Group", "World Population"]
+---
+
+Welcome to the first part of my blog!
+
+The following World Population Trend 1960-2020 will give you an overview of population density trends. We can clearly see that from 1960 to 2020, the world's population density is steadily increasing. This is due to the steady development of our science, technology and medical treatment, fewer diseases and longer life expectancy. However, there was a sharp decline between 2000 and 2001. In order to explore which group led this sharp decline, feel free to go through the regions and income groups parts with me.
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	collapse = TRUE
+)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(plotly)
+library(ggplot2)
+data <- read.csv("./../../../../POP_DNST.csv")
+data <- data[data$Region!="" & data$IncomeGroup!="",]
+
+d1 <- data[,c(1,5:ncol(data))]
+
+d1 <- pivot_longer(d1, -Country.Name, names_to = "Year", values_to = "Population")
+
+d1$Year <- as.numeric(gsub("X","", d1$Year))
+
+d1 <- d1 %>%group_by(Year)%>%summarise( Population = mean( Population,na.rm = T))
+
+p1 <- ggplot(d1, aes(Year,Population)) +
+  ggtitle("World Population Trend 1960-2020")+
+  geom_line() + theme_bw()
+ggplotly(p1)
+```
+
+
+Before exploring, let's take a look at the proportion of different income groups in different regions. I made the Percentage of Income Groups in Regions DV, which shows the percentage of each income group in each region. It is obvious from the DV that the proportion of high income in North America is 100%, which is the same as we expected. The high income group in South Asia is almost 0%. In order to more clearly explore the population changes of different regions and income groups, please move to Populations vs. Regions and Populations vs. Income groups part!
+```{r Region Trend, echo=FALSE, message=FALSE, warning=FALSE}
+data <- data[data$Region!="" & data$IncomeGroup!="",]
+
+d1 <- data %>%group_by(  Region ,IncomeGroup) %>%count()
+d2 <- data %>%group_by(  Region) %>%count()
+colnames(d2)[2] <- "total"
+d3 <- merge(d1, d2)
+d3$Percentage <- d3$n / d3$total * 100
+
+p3 <- ggplot(d3, aes( Region, Percentage, fill =  IncomeGroup)) + 
+   ggtitle("Percentage of Income Groups in Regions")+
+  geom_col()
+p3 <- p3 + theme(axis.text.x = element_text(angle = 45))
+
+ggplotly(p3)
+
+```
+
+
+

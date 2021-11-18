@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Xinyue&#39;s Blog</title>
+    <link>https://example.com/tags/</link>
+    <description>Recent content in Tags on Xinyue&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Nov 2021 21:13:14 -0500</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Income Group</title>
+      <link>https://example.com/tags/income-group/</link>
+      <pubDate>Wed, 17 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/tags/income-group/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Region</title>
+      <link>https://example.com/tags/region/</link>
+      <pubDate>Wed, 17 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/tags/region/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>World Population</title>
+      <link>https://example.com/tags/world-population/</link>
+      <pubDate>Wed, 17 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/tags/world-population/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regions</title>
+      <link>https://example.com/tags/regions/</link>
+      <pubDate>Tue, 16 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/tags/regions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Income Groups</title>
+      <link>https://example.com/tags/income-groups/</link>
+      <pubDate>Mon, 15 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/tags/income-groups/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

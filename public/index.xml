@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>World Population Trends on Xinyue&#39;s Blog</title>
+    <link>https://example.com/</link>
+    <description>Recent content in World Population Trends on Xinyue&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Nov 2021 21:13:14 -0500</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>World Populations</title>
+      <link>https://example.com/post/world-populations/</link>
+      <pubDate>Wed, 17 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/post/world-populations/</guid>
+      <description>Welcome to the first part of my blog!
+The following World Population Trend 1960-2020 will give you an overview of population density trends. We can clearly see that from 1960 to 2020, the world’s population density is steadily increasing. This is due to the steady development of our science, technology and medical treatment, fewer diseases and longer life expectancy. However, there was a sharp decline between 2000 and 2001.</description>
+    </item>
+    
+    <item>
+      <title>Populations Vs. Regions</title>
+      <link>https://example.com/post/region/</link>
+      <pubDate>Tue, 16 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/post/region/</guid>
+      <description>In this page, I made three DV: The Population Changes in Different Regions from 1960 to 2020, the Change of Population Growth Rate in different regions from 1960 to 2020 and the Distribution of Population in different regions in 2020.
+In the Population Trends(1960-2020) by Region figure, you can clearly see that the population of East Asia &amp;amp; Pacific is the highest at the beginning and with the fastest growing.</description>
+    </item>
+    
+    <item>
+      <title>Populations Vs. Income Groups</title>
+      <link>https://example.com/post/incomegroup/</link>
+      <pubDate>Mon, 15 Nov 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://example.com/post/incomegroup/</guid>
+      <description>In order to make a more intuitive comparison with Populations vs. Regions, I use the same comparison method. The following three DV show the population density changes in different income groups from 1960 to 2020, the changes of population density growth rate in different income groups from 1960 to 2020 and the distribution of population density in different income groups in 2020.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/about/</guid>
+      <description>With the continuous development of society and human reproduction, our ethnic groups are more and more.
+My blog is created to study the changes of world population density.
+In this blog, I will analyze the change of world population density from 1960 - 2020. I classified each country according to region and income group to find the change trend of population density in different regions and income groups.</description>
+    </item>
+    
+    <item>
+      <title>Data</title>
+      <link>https://example.com/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/data/</guid>
+      <description>The data I&amp;rsquo;m using is from Food and Agriculture Organization and World Bank population estimates.
+Population density: people per sq. km of land area
+Population density is midyear population divided by land area in square kilometers. Population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship&amp;ndash;except for refugees not permanently settled in the country of asylum, who are generally considered part of the population of their country of origin.</description>
+    </item>
+    
+    <item>
+      <title>Sources</title>
+      <link>https://example.com/sources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/sources/</guid>
+      <description>Food and Agriculture Organization and World Bank https://www.worldbank.org/en/topic/agriculture</description>
+    </item>
+    
+  </channel>
+</rss>
